@@ -1,0 +1,85 @@
+{% extends 'user/userbase.html' %}
+{% block title %}
+ userHome
+{% endblock %}
+{% block content %}
+
+
+  <br><br><font color="black" size="3">
+  <center><h1>Disease Prediction</h1></center><br><br><br>
+
+
+
+  <table style="margin-left:200px;height:300px;">
+       <form action="/predictionDisease/" method="post">{% csrf_token %}
+       <tr><th>Please enter symptoms.You should enter atleast two symptoms<br><br></th></tr>
+        <tr><th>Symptom 1<br><br></th>
+        <td><select name="sym1" requuired styles="height:30px;">
+         <option>Select Here</option>
+         {% for s in symlist %}
+         <option>{{s}}</option>
+         {% endfor %}
+        </select><br><br>
+        </td>
+        </tr>
+
+
+        <tr><th>Symptom 2<br><br></th>
+         <td><select name="sym2" required styles="height:30px;">
+         <option>Select Here</option>
+         {% for s in symlist %}
+         <option>{{s}}</option>
+         {% endfor %}
+        </select><br><br>
+        </td>
+        </tr>
+
+
+         <tr><th>Symptom 3<br><br></th>
+         <td><select name="sym3" required styles="height:30px;">
+         <option>Select Here</option>
+         {% for s in symlist %}
+         <option>{{s}}</option>
+         {% endfor %}
+        </select><br><br>
+        </td>
+        </tr>
+
+
+
+         <tr><th>Symptom 4<br><br></th>
+         <td><select name="sym4" required styles="height:30px;">
+         <option>Select Here</option>
+         {% for s in symlist %}
+         <option>{{s}}</option>
+         {% endfor %}
+        </select><br><br>
+        </td>
+        </tr>
+
+
+
+         <tr><th>Symptom 5<br><br></th>
+         <td><select name="sym5" required styles="height:30px;">
+         <option>Select Here</option>
+         {% for s in symlist %}
+         <option>{{s}}</option>
+         {% endfor %}
+        </select><br><br>
+        </td>
+        </tr>
+
+
+        <tr><th></th>
+         <td><input type="submit" value="Predict disease" styles="height:30px;">
+         </td>
+        </tr>
+      </form>
+  </table>
+
+{% endblock %}
+{% block user %}
+{{obj.uname}}
+{% endblock %}
+
+
