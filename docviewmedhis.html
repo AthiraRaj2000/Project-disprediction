@@ -1,0 +1,67 @@
+{% extends 'doctor/doctorbase.html' %}
+{% block title %}
+View Med History
+{% endblock %}
+{% block content %}
+<center><h3> View Medical History</h3></center>
+    {% if user1 == None %}
+        <font color="red">Medical data is not added</font>
+
+    {% else %}
+ <table>
+
+    <tr>
+    <td> <span>User Id</span></td>
+    <td>{{user1.uid}}</td>
+    </tr><tr><td></td></tr><tr><td></td></tr>
+
+    <tr>
+    <td> <span>Blood Group</span></td>
+    <td>{{user1.bg}}</td>
+    </tr><tr><td></td></tr><tr><td></td></tr>
+
+    <tr>
+    <td> <span>Height</span></td>
+    <td>{{user1.height}}cm</td>
+    </tr><tr><td></td></tr><tr><td></td></tr>
+
+    <tr>
+    <td> <span>Weight</span></td>
+    <td>{{user1.weight}}kg</td>
+    </tr><tr><td></td></tr><tr><td></td></tr>
+
+    <tr>
+    <td> <span>Currently undertaking medicines</span></td>
+    <td>{{user1.meditation}}</td>
+    </tr><tr><td></td></tr><tr><td></td></tr>
+
+    <tr>
+    <td><span>Medicine List:*</span></td>
+    <td>
+
+       {{user1.medlist}}<br>
+
+    </td>
+    </tr><tr><td></td></tr><tr><td></td></tr>
+
+    <tr><td><span>Allergic Tablets:</span></td>
+    <td>
+        {{user1.allergylist}}<br>
+
+    </td>
+
+    </tr><tr><td></td></tr><tr><td></td></tr>
+
+    <tr><td><span>use tobacco/have history of using tobacco"</span></td>
+    <td>{{user1.tob}}</td>
+    </tr><tr><td></td></tr><tr><td></td></tr>
+
+     <tr><td><span>use alcohol/ have history of using alcohol"</span></td>
+     <td>{{user1.alco}}</td>
+     </tr><tr><td></td></tr><tr><td></td></tr>
+    </table>
+
+
+ {% endif %}
+
+{% endblock %}

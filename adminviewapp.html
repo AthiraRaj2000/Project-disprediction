@@ -1,0 +1,57 @@
+{% extends 'admin/adminbase.html' %}
+{% block title %}
+admin view appointments
+{% endblock %}
+{% block content %}
+
+
+ <table border="1">
+     <tr><th>Doctor name</th>
+         <th>User name</th>
+         <th>Date</th>
+         <th>Token No</th>
+         <th>Med History</th>
+         <th> Disease</th>
+         <th>Prescribed Medicine</th>
+
+ </tr>
+     {% for x in apobj %}
+
+     <tr>
+         <td>{% for y in dobj %}
+            {% if x.Did == y.Did %}
+             {{y.Fname}}&nbsp{{y.Lname}}
+             {% endif %}
+             {% endfor %}
+         </td>
+         <td>{% for t in uobj %}
+            {% if x.uid == t.Uid %}
+             {{t.Fname}}&nbsp{{t.Lname}}
+             {% endif %}
+             {% endfor %}
+         </td>
+         <td>
+             {{x.Date}}
+         </td>
+
+         <td>{{x.token}}</td>
+
+         <td>
+                 <form action="/docviewmedhis/" method="post"><br>
+                     {% csrf_token %}
+
+                     <input type="number" name="uid" value="{{ x.uid }}" hidden>
+
+                     <input type="submit" value="VIEW"><br><br>
+
+                 </form>
+        </td>
+         <td>{{x.dis}}</td>
+         <td>{{x.med}}</td>
+     </tr>
+     {% endfor %}
+ </table>
+     {% endblock %}
+
+
+

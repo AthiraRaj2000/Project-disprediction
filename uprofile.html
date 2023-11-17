@@ -1,0 +1,66 @@
+{% extends 'user/userbase.html' %}
+{% block title %}
+profile
+{% endblock %}
+{% block content %}
+<center><h3>Profile</h3></center>
+<table border="">
+    <tr><th>first name</th><td>{{data.Fname}}</td></tr>
+    <tr><th>last name</th><td>{{data.Lname}}</td></tr>
+    <tr><th>Gender</th><td>{{data.Gender}}</td></tr>
+    <tr><th>DOB</th><td>{{data.dob}}</td></tr>
+    <tr><th>Hname</th><td>{{data.hname}}</td></tr>
+    <tr><th>City Name</th><td>{{data.cname}}</td></tr>
+    <tr><th>District</th><td>{{data.district}}</td></tr>
+    <tr><th>state</th><td>{{data.state}}</td></tr>
+    <tr><th>country</th><td>{{data.country}}</td></tr>
+    <tr><th>Email</th><td>{{data.email}}</td></tr>
+    <tr><th>phone</th><td>{{data.phone}}</td></tr>
+    <tr><th>Ename</th><td>{{data.Ename}}</td></tr>
+    <tr><th>relation</th><td>{{data.relation}}</td></tr>
+    <tr><th>contact</th><td>{{data.contact}}</td></tr>
+</table>
+
+<div>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <h2>UPDATE PROFILE</h2><br><br>
+
+    CONTACT DETAILS<br><br>
+    Update email<br><br>
+    <form action="/userMailUpdate/" method="post">{% csrf_token %}
+        <input type="email" name="email" placeholder="new emailid" required>
+        <input type="submit" value="UPDATE"><br><br>
+    </form>
+
+        <br><br>Phone Number<br><br>
+        <form action="/userPhoneUpdate/" method="post">{% csrf_token %}
+        <input type="text" name="phone" placeholder="new phone number" required>
+        <input type="submit" value="UPDATE"><br><br>
+        </form>
+    <br><br>Address<br><br>
+        <form action="/userAddUpdate/" method="post">{% csrf_token %}
+        House Name<br>
+            <input type="text" name="hname" required><br>
+        City<br>
+            <input type="text" name="cname" required><br>
+        District<br>
+            <input type="text" name="district" required><br>
+        State<br>
+            <input type="text" name="state" required><br>
+        Country<br>
+            <input type="text" name="country" required><br>
+            <input type="submit" name="add" value="UPDATE"><br><br>
+        </form>
+    <br><br>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

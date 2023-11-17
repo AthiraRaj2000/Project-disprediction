@@ -1,0 +1,226 @@
+{% extends 'doctor/doctorbase.html' %}
+{% block title %}
+doctorprofile
+{% endblock %}
+{% block content %}
+
+<div>
+    <table>
+        <tr>
+            <td>Doctor ID<br><br><br></td>
+            <td>{{doc.Did}}<br><br><br></td>
+        </tr>
+        <tr>
+            <td> <font color="white">Personal&nbspDetails</font> </td>
+        </tr>
+        <tr>
+            <td>
+                First name <br><br><br>
+            </td>
+            <td>{{doc.Fname}}<br><br><br></td>
+        </tr>
+         <tr>
+            <td>
+                Last name <br><br><br>
+            </td>
+            <td>{{doc.Lname}}<br><br><br></td>
+        </tr>
+         <tr>
+            <td>
+                Gender <br><br><br>
+            </td>
+            <td>{{doc.Gender}}<br><br><br></td>
+        </tr>
+         <tr>
+            <td>
+                Date Of Birth <br><br><br>
+            </td>
+            <td>{{doc.dob}}<br><br><br></td>
+        </tr>
+         <tr>
+            <td>
+                Address <br><br><br>
+            </td>
+            <td>{{doc.hname}}<br>
+                {{doc.sname}}<br>
+                {{doc.city}}<br>
+                {{doc.dist}}<br>
+                {{doc.state}}<br>
+                <br><br><br>
+            </td>
+         </tr>
+        <tr>
+            <td>
+                Telephone <br><br><br>
+            </td>
+            <td>{{doc.phone}}<br><br><br></td>
+        </tr>
+        <tr>
+            <td>
+                Email <br><br><br>
+            </td>
+            <td>{{doc.email}}<br><br><br></td>
+        </tr>
+        <tr>
+        <td> <font color="white">LOGIN&nbspDetails</font> </td>
+        </tr>
+
+        <tr>
+            <th>
+               User Name <br><br><br>
+            </th>
+            <td>{{doc.uname}}<br><br><br></td>
+        </tr>
+
+        <tr>
+        <td> <font color="white">WORK&nbspDetails</font> </td>
+        </tr>
+
+        <tr>
+            <td>
+                Qualifications <br><br><br>
+            </td>
+            <td>{{doc.qualification}}<br><br><br></td>
+        </tr>
+        <tr>
+            <td>
+                Specialisation <br><br><br>
+            </td>
+            <td>{{doc.spc}}<br><br><br></td>
+        </tr>
+
+        <tr>
+            <td>
+                Licence No <br><br><br>
+            </td>
+            <td>{{doc.Lno}}<br><br><br></td>
+        </tr>
+        <tr>
+            <th>
+               Practice Starting Date <br><br><br>
+            </th>
+            <td>{{doc.exp}}<br><br><br></td>
+        </tr>
+        <tr>
+            <th>
+              Working address <br><br><br>
+            </th>
+            <td>{{doc.hname}}<br>
+                {{doc.cname}}<br>
+                {{doc.district}}<br>
+                {{doc.state}}<br>
+                {{doc.country}} <br><br><br></td>
+        </tr>
+
+        <tr>
+            <th>
+               Consultation Days <br><br><br>
+            </th>
+            <td>
+                {% if days.did_id == doc.id %}
+                    {% if days.sun == 1 %} SUNDAY,{% endif %}
+                    {% if days.mon == 1 %} MONDAY,{% endif %}
+                    {% if days.tue == 1 %} TUESDAY,{% endif %}
+                    {% if days.wed == 1 %} WEDNESDAY,{% endif %}
+                    {% if days.thu == 1 %} THURSDAY,{% endif %}
+                    {% if days.fri == 1 %} FRIDAY,{% endif %}
+                    {% if days.sat == 1 %} SATURDAY,{% endif %}
+                {% endif %} <br><br><br>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <th> Consultaion time<br><br><br></th>
+
+            <td>
+                {{con.opfrom}} to {{con.opto}}<br><br><br>
+            </td>
+        </tr>
+
+        <tr>
+            <th> Certificate <br><br><br></th>
+        <td>
+            <a href="{{doc.furl}}"> link </a> <br><br><br>
+        </td>
+        </tr>
+    </table>
+
+</div>
+
+<div>
+    <div>
+      <h1> Profile</h1><br><br><br><br><br>
+      <h2> Update Profile</h2>
+
+       CONTACT DETAILS <br><br>
+        Update Email<br>
+        <form action="/mailUpdate/" method="post">{% csrf_token %}
+        <input type ="email" name="email" placeholder="New mail id" required>
+        <input type="submit"   value="UPDATE"><br><br>
+        </form>
+        Phone Number<br>
+        <form action="/phoneUpdate/" method="post">{% csrf_token %}
+        <input type ="text " name="phone" placeholder="New Phone Number" required>
+        <input type="submit"   value="UPDATE"><br><br>
+        </form>
+        <br><br>
+        EDUCATIONAL DETAILS<br><br>
+        <form action="/qualUpdate/"  method="post" enctype="multipart/form-data">
+         {% csrf_token %}
+            Qualifications<br>
+        <input type ="text" name="qual" placeholder="qualification" required>
+            Certificates<br>
+        <input type="file" name="cert">
+        <input type="submit"   value="UPDATE"><br><br>
+        </form>
+        <br><br>
+        WORKING DETAILS <br><br>
+         Working Address<br><br>
+       <form action="/addUpdate/" method="post">{% csrf_token %}
+        Hospital Name <br>
+        <input type ="text" name="hname" required> <br>
+         City<br>
+         <input type ="text" name="cname" required><br>
+         District <br>
+         <input type ="text" name="district" required><br>
+         State<br>
+         <input type ="text" name="state" required> <br>
+         Country<br>
+         <input type ="text" name="country" required><br>
+         <input type="submit"   value="UPDATE"> <br><br>
+        </form>
+
+        Consultation Days<br>
+          <form action="/daysUpdate/" method="post">{% csrf_token %}
+          <input type="checkbox" name="condays" value="sunday">sunday
+          <input type="checkbox" name="condays" value="monday">monnday
+          <input type="checkbox" name="condays" value="tuesday">tuesday
+          <input type="checkbox" name="condays" value="wednesday">wednesday
+          <input type="checkbox" name="condays" value="thursday">thursday
+          <input type="checkbox" name="condays" value="friday">friday
+          <input type="checkbox" name="condays" value="saturday">saturday
+          <input type="submit"   value="UPDATE"> <br><br>
+        </form>
+         <br><br>
+        CHANGE PASSWORD
+        <br><br>
+         <form action="/dpwdUpdate/" method="post">{% csrf_token %}
+        Current Password<br>
+         <input type ="text" name="pwd1" required><br>
+        New Password<br>
+         <input type ="text" name="pwd2" required><br>
+          <input type ="submit" name="pwd"  value="UPDATE">
+         </form>
+    </div>
+
+
+</div>
+
+
+
+{% endblock %}
+{% block user %}
+{{doc.uname}}<br>
+{% endblock %}

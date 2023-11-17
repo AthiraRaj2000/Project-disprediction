@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+
+     <title>DISEASE PREDICTION</title>
+<!--
+
+Template 2098 Health
+
+http://www.tooplate.com/view/2098-health
+
+-->
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+     <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-5">
+                         <p>Welcome to a Professional Health Care</p>
+                    </div>
+                         
+                    <div class="col-md-8 col-sm-7 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i> 010-060-0160</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 6:00 AM - 10:00 PM (Mon-Fri)</span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">info@company.com</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="index.html" class="navbar-brand"><i class="fa fa-h-square"></i>EALTH PREDICTION</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="/home/" class="smoothScroll"><b><h3>Home</h3></b></a></li>
+                         <li><a href="#team" class="smoothScroll"><b><h3>DOCTOR REGISTRATION</h3></b></a></li>
+                        <li><a href="#news" class="smoothScroll"><b><h3>PATIENT REGISTRATION</h3></b></a></li>
+                         <li><a href="#google-map" class="smoothScroll"><b><h3>CONTACT</h3></b></a></li>
+
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- HOME -->
+     <section id="home" class="slider" data-stellar-background-ratio="0.5">
+            <div class="container">
+               <div class="row">
+                              <div class="item item-third">
+                                   <div class="caption">
+                                        <div class="col-md-offset-1 col-md-10">
+                                             <h3><i>Start thinking wellness not illness</i></h3>
+                                             <h1> Health Care</h1>
+                                             <center>
+                                                   <form action="/login/" method="post">
+                                                       {% csrf_token %}
+                                                       <div class="container"><font color="black">
+
+                                                        <table>
+
+                                                           <tr>
+                                                                <td><label>Select list</label><br><br></td>
+                                                                <td><select name = "utype">
+                                                                  <option value = "Admin">Admin</option>
+                                                                  <option value = "Doctor">Doctor</option>
+                                                                  <option value = "Patient">Patient</option>
+                                                                   </select><br><br></td>
+
+                                                           </tr>
+                                                             <tr>
+                                                                <td><label>Username : </label><br><br></td>
+                                                                <td><input type="text" placeholder="Enter Username" name="username" required>
+                                                            <br><br></td>
+                                                           </tr>
+                                                             <tr>
+                                                                <td><label>Password : </label><br><br></td>
+                                                                <td>
+                                                                 <input type="password" placeholder="Enter Password" name="password" required>
+                                                                    <br><br></td>
+
+                                                           </tr>
+                                                             <tr>
+                                                                  <td></td>
+                                                                 <td> <button type="submit" style="background-color:light blue;" value="login"> Login</td>
+
+
+
+
+                                                             </tr>
+                                                        </table>
+                                                           <a href="/forgot/" class="modal-password-btn">Forgot Password?</a>
+
+                                                       </font>
+                                                       </div>
+                                                        </form>
+                                             </center>
+
+
+
+
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+               </div>
+          </div>
+     </section>
+     <!-- TEAM -->
+     <section id="team" data-stellar-background-ratio="1">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.1s"> Doctor Registration</h2>
+                         </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="col-md-6 col-sm-8">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                              <img src="{% static 'images/team-image1.jpg' %}" class="img-responsive" alt="my image">
+
+                         </div>
+
+                    </div>
+
+
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                              <div style="padding-left:35px;padding-top:30px;">
+                           <form action="/dprof/" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                 <input type="number" name="lno" placeholder="Licence no" ><br><br>
+                                 <input type="text" name="fname" placeholder="First name" ><br><br>
+                                 <input type="text" name="lname" placeholder="Last name" ><br><br>
+                                Gender<br><input type="radio" name="gen" id="male" value="male">Male <br>
+                                       <input type="radio" name="gen" id="female" value="female">Female<br>
+                                   <input type="radio" name="gen" id="other" value="other">Other<br><br>
+                                DOB <br>   <input type="date" id="date-of-birth" name="DOB" min="{{ddmin}}" required max="{{ddmax}}"><br><br>
+                                 <input type="email"id="e_mail"name="email"placeholder="mail-id"><br><br>
+                                 <input type="text" name="ph" placeholder="phone number" maxlength=10><br><br>
+                                Qualification<BR><input type="radio" name="qualifi" id="qual1" value="MBBS">MBBS<BR>
+                                <input type="radio" name="qualifi" id="qual2" value="MD">MD<BR><BR>
+                                 Certificates <br><input type="text" name="fname1"><br><br>
+                                 file<input type="file" name="bio"><br>
+
+
+                                Specialisation<br><select name="spc" id="special">
+                                <option value="Dermatology">Dermatology</option>
+                                <option value="Dermatology">Dermatology</option>
+                                <option value="General Medicine">General Medicine</option>
+                                <option value="Gastrology">Gastrology</option>
+                                <option value="Orthopedic">Orthopedic</option>
+                                <option value="Neurology">Neurology</option>
+                                <option value="Cardiology" >Cardiology</option>
+                                <option value="ENT">ENT</option>
+                                <option value="Urology">Urology</option>
+                          </select><br><br>
+                                Experience<br>
+
+
+                                   <input type="date" name="exp" min="{{dexpmin}}" max="{{dexpmax}}"><br><br>
+                                 <input type="text" id="honame" name="hname" placeholder="Hospital Name"><br><br>
+                                 <input type="text" id="ciname" name="cname"placeholder="City Name"><br><br>
+                                District<br><select name="district" id="dist">
+                                <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                                <option value="Kollam">Kollam</option>
+                                <option value="Pathanamthitta">Pathanamthitta</option>
+                                <option value="Alappuzha">Alappuzha</option>
+                                <option value="Kottayam">Kottayam</option>
+                                <option value="Idukki">Idukki</option>
+                                <option value="Ernakulam">Ernakulam</option>
+                                <option value="Thrissur">Thrissur</option>
+                                <option value="Palakkad">Palakkad</option>
+                                <option value="Malappuram">Malappuram</option>
+                                <option value="Kozhikode">Kozhikode</option>
+                                <option value="Wayanad">Wayanad</option>
+                                <option value="Kannur">Kannur</option>
+                                <option value="Kasargod">Kasargod</option>
+                          </select><br><br>
+                               <input type="text" id="stname" name="state" placeholder=" State"><br><br>
+                               <input type="text" id="coun" name="country" placeholder=" Country"><br><br>
+                                <input type="text" id="user" name="uname" placeholder="Username"><br><br>
+                                <input type="password" id="pname" name="pwd" placeholder="Password"><br><br>
+                               <label for="consult"> <span>Consultation Days</span></label><br>
+                               <input type="checkbox" name="opdays" id="days" value="sunday">sunday
+                               <input type="checkbox" name="opdays" id="day2" value="monday">monday
+                               <input type="checkbox" name="opdays" id="day3" value="tuesady">tuesday
+                               <input type="checkbox" name="opdays" id="day4" value="wednesday">wednesday<br>
+                               <input type="checkbox" name="opdays" id="day5" value="thursday">thursday
+                               <input type="checkbox" name="opdays" id="day6" value="friday">friday
+                               <input type="checkbox" name="opdays" id="day7" value="sunday">saturday
+                            <br><br>
+                               <label for="time"> <span>OP Start Time</span>
+                               <input type="time" name="stime" required> </label>
+                               <br>
+                               <label for="time"> <span>OP End Time </span>
+                               <input type="time" name="etime" required> </label><br><br>
+
+                                <input type="submit" value="submit"><br><br>
+
+
+                           </form>
+                                   </div>
+                            </div>
+                         </div>
+                    </div>
+               </div>
+     </section>
+
+
+     <!-- NEWS -->
+     <section id="news" data-stellar-background-ratio="2.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <!-- SECTION TITLE -->
+
+                         <!-- NEWS THUMB -->
+                         <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                              <div class="news-info">
+
+                                   <h3><a href="news-detail.html"></a></h3>
+
+                                   <div class="author">
+                                       <div class="author-info">
+
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="news-info">
+                              <!-- NEWS THUMB -->
+                         <h2>
+                               Patient Registration</h2>
+                              </div>
+                         </div>
+                   <a href="news-detail.html"></a>
+                              <div class="news-info">
+
+                                   <div class="clearfix"></div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                              <img src="{% static 'images/news-image3.jpg' %}"  class="img-responsive" alt="my image">
+                         </div>
+
+                    </div>
+                              </div>
+
+                                   <div class="col-md-4 col-sm-6">
+                                        <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                                             <div>
+                                    <form action="/uprof/" method="post">
+                                {% csrf_token %}
+                                        <tr>
+                                            <td><input type="text" name="fname" placeholder="First name" ></td><br><br>
+                                            <td><input type="text" name="lname" placeholder="Last name" ></td></tr><br><br>
+                                        <tr><td>Gender<br><input type="radio" name="gen" id="mal" value="male">Male</td>
+                                            <td><br><input type="radio" name="gen" id="fem" value="female">Female </td>
+                                            <td><br><input type="radio" name="gen" id="others">Other </td></tr><br><br>
+                                        <tr><td>DOB<br><input type="date" id="date" name="DOB" min="{{pdmin}}" max="{{pdmax}}"  required></td><br><br>
+                                            <td><input type="text" placeholder="HOSPITAL NAME" name="hname"></td><br><br>
+                                            <td><input type="text" placeholder="City" name="cname"></td><br><br>
+                                            District<br><select name="district" id="distr">
+                                <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                                <option value="Kollam">Kollam</option>
+                                <option value="Pathanamthitta">Pathanamthitta</option>
+                                <option value="Alappuzha">Alappuzha</option>
+                                <option value="Kottayam">Kottayam</option>
+                                <option value="Idukki">Idukki</option>
+                                <option value="Ernakulam">Ernakulam</option>
+                                <option value="Thrissur">Thrissur</option>
+                                <option value="Palakkad">Palakkad</option>
+                                <option value="Malappuram">Malappuram</option>
+                                <option value="Kozhikode">Kozhikode</option>
+                                <option value="Wayanad">Wayanad</option>
+                                <option value="Kannur">Kannur</option>
+                                <option value="Kasargod">Kasargod</option>
+                          </select><br><br>
+                                            <td><input type="text" placeholder="State " name="state"></td><br><br>
+                                            <td><input type="text" placeholder="Country" name="country"><br><br></td>
+                                            <td><input type="email"aria-placeholder="emails"name="mail"placeholder="Mail-id"></td><br><br>
+                                            <td><input type="text" name="ph" placeholder="Phone number" maxlength=10></td><br><br>
+                                            <td><input type="text" placeholder="USER" name="uname"></td><br><br>
+                                            <td><input type="password" placeholder="PASSWORD" name="pwd"></td><br><br>
+                                            <td><input type="text" placeholder="Bystander Name" name="ename"></td><br><br>
+                                            <td><input type="text" placeholder="RELATION" name="relation"></td><br><br>
+                                            <td><input type="text" placeholder="Contact" name="contact" maxlength=10></td><br><br>
+                                            <input type="submit" value="submit"><br><br>
+<br><br>
+                                    </form>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                         <!-- NEWS THUMB -->
+                         <div class="news-thumb wow fadeInUp" data-wow-delay="0.8s">
+                              <a href="news-detail.html">
+
+                              </a>
+                              <div class="news-info">
+
+                                   <h3><a href="news-detail.html"></a></h3>
+
+                                   <div class="author">
+
+                                        <div class="author-info">
+
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+     </section>
+
+
+
+
+     <!-- GOOGLE MAP -->
+     <section id="google-map">
+     <!-- How to change your own map point
+            1. Go to Google Maps
+            2. Click on your location point
+            3. Click "Share" and choose "Embed map" tab
+            4. Copy only URL and paste it within the src="" field below
+	-->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+     </section>           
+
+
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb"> 
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Contact Info</h4>
+
+
+                              <div class="contact-info">
+                                   <p><i class="fa fa-phone"></i> 010-070-0170</p>
+                                   <p><i class="fa fa-envelope-o"></i> <a href="#">info@company.com</a></p>
+                              </div>
+                         </div>
+                    </div>
+
+
+
+                    <div class="col-md-12 col-sm-12 border-top">
+                         <div class="col-md-4 col-sm-6">
+                              <div class="copyright-text"> 
+                                   <p>Copyright &copy; 2018 Your Company 
+                                   
+                                   | Design: Tooplate</p>
+                              </div>
+                         </div>
+                         <div class="col-md-6 col-sm-6">
+                              <div class="footer-link"> 
+                                   <a href="#">Laboratory Tests</a>
+                                   <a href="#">Departments</a>
+                                   <a href="#">Insurance Policy</a>
+                                   <a href="#">Careers</a>
+                              </div>
+                         </div>
+                         <div class="col-md-2 col-sm-2 text-align-center">
+                              <div class="angle-up-btn"> 
+                                  <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                              </div>
+                         </div>   
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+     <!-- SCRIPTS -->
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/jquery.sticky.js' %}"></script>
+     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'js/wow.min.js' %}"></script>
+     <script src="{% static 'js/smoothscroll.js' %}"></script>
+     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

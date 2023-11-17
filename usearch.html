@@ -1,0 +1,86 @@
+ {% extends 'user/userbase.html' %}
+ {% block title %}
+ view patients
+  {% endblock %}
+{%  block content %}
+
+ <form action="" method="post"> {% csrf_token %}
+     <h3><b>YOUR PREDICTED DISEASE IS &nbsp{{disease}}</b></h3><br><br><br>
+
+     <select name="spc" id="special">
+                                <option value="Dermatology">Dermatology</option>
+                                <option value="General Medicine">General Medicine</option>
+                                <option value="Gastrology">Gastrology</option>
+                                <option value="Orthopedic">Orthopedic</option>
+                                <option value="Neurology">Neurology</option>
+                                <option value="Cardiology" >Cardiology</option>
+                                <option value="ENT">ENT</option>
+                                <option value="Urology">Urology</option>
+
+                          </select>
+
+  <button type="submit"><i class="fa fa-search"></i></button>
+  <br><br>
+  </form>
+ <br> <br>
+
+ <br>
+ <br>
+{% if data %}
+  <center><h3><b>Doctors Details</b></h3></center>
+<table border="">
+    <tr>
+        <th>Doctor Id</th>
+        <th>License no</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>DOB</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Qualification</th>
+        <th>Certificates</th>
+        <th>File Link</th>
+        <th>Specialisation</th>
+        <th>Work Start</th>
+        <th>Hospital</th>
+        <th>City</th>
+        <th>District</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Booking</th>
+    </tr>
+    {% for x in data %}
+    <tr><td>{{x.Did}}</td>
+        <td>{{x.Lno}}</td>
+        <td>{{x.Fname}}</td>
+        <td>{{x.Lname}}</td>
+        <td>{{x.Gender}}</td>
+        <td>{{x.dob}}</td>
+        <td>{{x.email}}</td>
+        <td>{{x.phone}}</td>
+        <td>{{x.qualification}}</td>
+        <td>{{x.certificates}}</td>
+        <td> <a href="{{x.furl}}">click here</a> </td>
+        <td>{{x.spc}}</td>
+        <td>{{x.exp}}</td>
+        <td>{{x.hname}}</td>
+        <td>{{x.cname}}</td>
+        <td>{{x.district}}</td>
+        <td>{{x.state}}</td>
+        <td>{{x.country}}</td>
+        <td>
+            <form action="/appointment/" method="post">
+                {% csrf_token %}
+
+           <input type="number" name="did" value="{{x.Did}}"  hidden >
+                <br>
+            <input type="submit" value="Appointment">
+
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+    </table>
+{% endif %}
+ {% endblock %}
